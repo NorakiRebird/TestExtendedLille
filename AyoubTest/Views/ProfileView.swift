@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Binding var showmodal: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button(action:  {
+                showmodal = false
+            }, label: {
+                Text("Close")
+            })
+            Text("Profile View")
+        }
+
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(showmodal: .constant(true))
 }

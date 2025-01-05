@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-struct SubskillDetail: View {
+struct SubSkillDetail: View {
+    var subSkill: SubSkill
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.orange.ignoresSafeArea()
+            VStack {
+                Text(subSkill.title)
+                Text(subSkill.assessement)
+            }
+            .foregroundColor(.white)
+        }
     }
 }
 
 #Preview {
-    SubskillDetail()
+    SubSkillDetail(subSkill: subSkillsC1.first!)
 }
